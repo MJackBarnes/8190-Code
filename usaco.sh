@@ -69,15 +69,15 @@ function c++ {
 }
 
 
-if [ $LANG=java ]
+if [ $LANG = java ]
 then 
 java
 fi
-if [ $LANG=c ]
+if [ $LANG = c ]
 then 
 c
 fi
-if [ $LANG=c++ ]
+if [ $LANG = c++ ]
 then
 c++
 fi
