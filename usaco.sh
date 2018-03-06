@@ -51,8 +51,9 @@ function c++ {
 	FILE="$TASK.cpp"
 	echo "/*" >> $FILE
 	echo "ID: $ID" >> $FILE
-	echo "TASK: $TASK" >> $FILE
+	#echo "TASK: $TASK" >> $FILE
 	echo "LANG: C++" >> $FILE
+	echo "TASK: $TASK" >> $FILE
 	echo "*/" >> $FILE
 	echo "\#include <iostream>" >> $FILE
 	echo "\#include <fstream>" >> $FILE
@@ -68,6 +69,41 @@ function c++ {
 	echo "}" >> $FILE
 }
 
+function python2 {
+	FILE="$TASK.py"
+	echo "\"\"\"" >> $FILE
+	echo "ID: $ID" >> $FILE
+	echo "LANG: PYTHON2" >> $FILE
+	echo "TASK: $TASK" >> $FILE
+	echo "\"\"\"" >> $FILE
+	echo "fin = open (\'$TASK.in\', \'r\')" >> $FILE
+	echo "fout = open (\'$TASK.out\', \'w\')" >> $FILE
+	echo "" >> $FILE
+	echo "item1 = fin.readln()" >> $FILE
+	echo "item2 = fin.readln()" >> $FILE
+	echo "" >> $FILE
+	echo "answer = item1 + item2" >> $FILE
+	echo "fout.print(answer)" >> $FILE
+	echo "exit()" >> $FILE
+}
+
+function python3 {
+	FILE="$TASK.py"
+	echo "\"\"\"" >> $FILE
+	echo "ID: $ID" >> $FILE
+	echo "LANG: PYTHON3" >> $FILE
+	echo "TASK: $TASK" >> $FILE
+	echo "\"\"\"" >> $FILE
+	echo "fin = open (\'$TASK.in\', \'r\')" >> $FILE
+	echo "fout = open (\'$TASK.out\', \'w\')" >> $FILE
+	echo "" >> $FILE
+	echo "item1 = fin.readln()" >> $FILE
+	echo "item2 = rin.readln()" >> $FILE
+	echo "" >> $FILE
+	echo "answer = item1 + item2" >> $FILE
+	echo "fout.print(answer)" >> $FILE
+	echo "exit()" >> $FILE
+}
 
 if [ $LANG = java ]
 then 
@@ -80,6 +116,14 @@ fi
 if [ $LANG = c++ ]
 then
 c++
+fi
+if [ $LANG = python2 ]
+then
+python2
+fi
+if [ $LANG = python3 ]
+then
+python3
 fi
 
 exit
