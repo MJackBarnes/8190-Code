@@ -38,11 +38,11 @@ function c {
 	echo "LANG: C" >> $FILE
 	echo "TASK: $TASK" >> $FILE
 	echo "*/" >> $FILE
-	echo "\#include <stdio.h>" >> $FILE
+	echo "#include <stdio.h>" >> $FILE
 	echo "main () {" >> $FILE
 	echo "	FILE *fin = fopen (\"$TASK.in\", \"r\");" >> $FILE
 	echo "	FILE *fout = fopen (\"$TASK.out\", \"w\");" >> $FILE
-	echo "	/*fprintf (fout, out);*/" >> $FILE
+	echo "	*fprintf (fout, out);*/" >> $FILE
 	echo "	exit (0);" >> $FILE
 	echo "}" >> $FILE
 }
@@ -55,16 +55,16 @@ function c++ {
 	echo "LANG: C++" >> $FILE
 	echo "TASK: $TASK" >> $FILE
 	echo "*/" >> $FILE
-	echo "\#include <iostream>" >> $FILE
-	echo "\#include <fstream>" >> $FILE
-	echo "\#include <string>" >> $FILE
+	echo "#include <iostream>" >> $FILE
+	echo "#include <fstream>" >> $FILE
+	echo "#include <string>" >> $FILE
 	echo "" >> $FILE
 	echo "using namespace std;" >> $FILE
 	echo "" >> $FILE
 	echo "int main() {" >> $FILE
 	echo "	ofstream fout (\"$TASK.out\");" >> $FILE
 	echo "	ifstream fin (\"$TASK.in\");" >> $FILE
-	echo "	/* fout << solution << endl;" >> $FILE
+	echo "	fout << solution << endl;" >> $FILE
 	echo "	return 0;" >> $FILE
 	echo "}" >> $FILE
 }
